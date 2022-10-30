@@ -1,0 +1,7 @@
+/node_modules
+/vendor
+# Dùng webstorm sẽ có 2 thư mục CACHE này: /.idea và .idea/
+/.idea
+.idea/
+# 
+.env
