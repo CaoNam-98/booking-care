@@ -2,6 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import viewEngine from "./config/viewEngine";
 import initWebRoutes from './route/web';
+import connectDB from './config/connectDB';
 // gọi đến hàm config() của thư viện dotenv
 require('dotenv').config();
 
@@ -14,6 +15,9 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 viewEngine(app);
 initWebRoutes(app);
+
+// ConnectDB
+connectDB();
 
 // Để chạy được app chúng ta thì dùng app.listen
 // Port === undefined (nếu chưa khai trong .env) => port 6969
