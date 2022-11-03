@@ -1,13 +1,7 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Users', {
-      // email: DataTypes.STRING,
-      // firstName: DataTypes.STRING,
-      // lastName: DataTypes.STRING,
-      // address: DataTypes.STRING,
-      // gender: DataTypes.BOOLEAN,
-      // roleid: DataTypes.STRING
+    await queryInterface.createTable('booking', {
       // Chạy lệnh sau để áp migrations xuống csdl: npx sequelize-cli db:migrate
       id: {
         allowNull: false,
@@ -15,22 +9,19 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      email: {
+      statusId: {
         type: Sequelize.STRING
       },
-      firstName: {
+      doctorId: {
+        type: Sequelize.INTEGER
+      },
+      patientId: {
+        type: Sequelize.INTEGER
+      },
+      date: {
         type: Sequelize.STRING
       },
-      lastName: {
-        type: Sequelize.STRING
-      },
-      address: {
-        type: Sequelize.STRING
-      },
-      gender: {
-        type: Sequelize.BOOLEAN
-      },
-      roleid: {
+      timeType: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -44,6 +35,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Users');
+    await queryInterface.dropTable('booking');
   }
 };
