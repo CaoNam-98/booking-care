@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('booking', {
+    await queryInterface.createTable('bookings', {
       // Chạy lệnh sau để áp migrations xuống csdl: npx sequelize-cli db:migrate
       id: {
         allowNull: false,
@@ -35,6 +35,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('booking');
+    await queryInterface.dropTable('bookings');
   }
 };

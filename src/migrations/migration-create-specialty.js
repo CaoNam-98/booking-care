@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('allcodes', {
+    await queryInterface.createTable('specialties', {
       // Chạy lệnh sau để áp migrations xuống csdl: npx sequelize-cli db:migrate
       id: {
         allowNull: false,
@@ -9,16 +9,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      key: {
-        type: Sequelize.STRING
+      description: {
+        type: Sequelize.TEXT
       },
-      type: {
-        type: Sequelize.STRING
-      },
-      valueEn: {
-        type: Sequelize.STRING
-      },
-      valueVi: {
+      image: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -32,6 +26,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('allcodes');
+    await queryInterface.dropTable('specialties');
   }
 };
